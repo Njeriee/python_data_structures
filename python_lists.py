@@ -62,16 +62,20 @@ print(pig_latin("hello how are you")) # Should be "ellohay owhay reaay ouyay"
 print(pig_latin("programming in python is fun")) # Should be "rogrammingpay niay ythonpay siay unfay"
 
 def group_list(group, users):
-    members = group.split(",") 
-    users = users
-    # members = ''
-    # for user in users:
-    #     members += user + ',' + ' '
-    # return "{}:{}".format(group,members)
-    return type(members)
+  members = ', ' .join(str(elem) for elem in users)
+  return "{}: {}".format(group,members)
 
 print(group_list("Marketing", ["Mike", "Karen", "Jake", "Tasha"])) # Should be "Marketing: Mike, Karen, Jake, Tasha"
 print(group_list("Engineering", ["Kim", "Jay", "Tom"])) # Should be "Engineering: Kim, Jay, Tom"
 print(group_list("Users", "")) # Should be "Users:"
 
 
+# combining two lists, one in reverse order
+def combine_lists(list1,list2):
+  new_list = list2 + list1[::-1]
+  print(new_list)
+
+Jamies_list = ["Alice", "Cindy", "Bobby", "Jan", "Peter"]
+Drews_list = ["Mike", "Carol", "Greg", "Marcia"]
+
+print(combine_lists(Jamies_list, Drews_list))
